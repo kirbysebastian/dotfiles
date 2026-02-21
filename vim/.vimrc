@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'bfrg/vim-c-cpp-modern'
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'scrooloose/nerdtree'
@@ -42,6 +43,6 @@ colorscheme gruvbox
 nmap <F5> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
-autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
